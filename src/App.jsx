@@ -8,6 +8,7 @@ import bee_keyholder from "./assets/images/bee_keyholder.png";
 import rasied_feeder from "./assets/images/rasied_feeder.png";
 import Engraved_Candle_Holder from "./assets/images/Engraved_Candle_Holder.png";
 import Bird_Candle_Holder_Set from "./assets/images/Bird_Candle_Holder_Set.png";
+import coasters from "./assets/images/coasters.png";
 import logo from "./assets/images/furnace-logo.png";
 export default function App() {
   const categories = [
@@ -25,6 +26,7 @@ export default function App() {
       icon: Trees,
       title: "Coasters & Giftware",
       text: "Laser-engraved coasters, small gift sets, and practical decor pieces designed to gift and ship well.",
+      image: coasters
     },
     {
       icon: Hammer,
