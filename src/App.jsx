@@ -159,6 +159,12 @@ export default function App() {
               </div>
 
               <div className="rounded-3xl bg-stone-900 p-6">
+                <img
+                  src={coasters}
+                  alt="Coasters"
+                  className="mb-4 rounded-xl"
+                />
+
                 <div className="text-xs uppercase text-stone-400">Giftware</div>
                 <div className="mt-2 text-xl font-bold">Coasters</div>
               </div>
@@ -181,13 +187,6 @@ export default function App() {
 
             return (
               <div key={item.title} className="rounded-3xl bg-stone-900 p-6">
-                 {item.image && (
-                    <img
-                     src={item.image}
-                     alt={item.title}
-                     className="mb-4 rounded-xl"
-                    />
-                )}
                 <Icon className="mb-4 text-amber-300" />
                 <h3 className="text-xl font-bold">{item.title}</h3>
                 <p className="mt-3 text-sm text-stone-300">{item.text}</p>
