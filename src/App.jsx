@@ -42,7 +42,7 @@ const PRODUCTS = [
     slug: "keal", sku: "FA-KEAL", badge: "Flagship",
     name: "Kea Alpine Landscape",
     sub: "Statement Wall Art · 750×490mm",
-    desc: "Two-layer Okoume plywood. Walnut-stained silhouette floating above a warm natural backer. Solid black walnut frame. Shadow lines shift as light moves through the day.",
+    desc: "A bold centrepiece designed to anchor a room. Layered timber construction with a floating silhouette and solid walnut frame. Shadow lines shift as light moves through the day.",
     price: 349,
   },
   {
@@ -243,7 +243,7 @@ export default function App() {
               </h1>
 
               <p className="mt-6 text-lg text-stone-400 leading-relaxed max-w-lg" style={{ fontFamily: "Arial, sans-serif" }}>
-                furnACE creates handcrafted timber art and décor inspired by Aotearoa, laser-cut, hand-assembled, and finished in our Helensville workshop.
+                Handcrafted timber wall art inspired by Aotearoa. Designed, cut, and finished in our Helensville workshop.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4" style={{ fontFamily: "Arial, sans-serif" }}>
@@ -421,7 +421,7 @@ export default function App() {
 
           <div className="grid gap-6 md:grid-cols-3 mb-8" style={{ fontFamily: "Arial, sans-serif" }}>
             {[
-              { Icon: Mail, label: "Email", value: "andrew@furnace.co.nz", href: "mailto:andrew@furnace.co.nz" },
+              { Icon: Mail, label: "Email", value: "andrew@furnace.nz", href: "mailto:andrew@furnace.nz" },
               { Icon: Phone, label: "Phone", value: "021 149 9447", href: "tel:02114994477" },
               { Icon: MapPin, label: "Location", value: "Helensville, Auckland NZ", href: null },
             ].map(({ Icon, label, value, href }) => (
@@ -451,7 +451,7 @@ export default function App() {
                   style={{ background: "#C4882F", color: "#000" }}>
                   <ShoppingBag className="h-4 w-4" /> furnacedecor.etsy.com
                 </a>
-                <a href="https://www.trademe.co.nz/stores/furnace" target="_blank" rel="noreferrer"
+                <a href="https://www.trademe.co.nz/a/member/346611" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border border-stone-700 px-5 py-2.5 font-semibold text-sm text-stone-300 transition-colors hover:text-white">
                   Trade Me Store
                 </a>
@@ -463,7 +463,7 @@ export default function App() {
               <p className="text-sm text-stone-400 mb-4 leading-relaxed" style={{ fontFamily: "Arial, sans-serif" }}>
                 Wholesale at 50% of RRP. Zoo/chain accounts at 45% of RRP. Minimum first order NZ$500. Payment 30 days from invoice. Exclusivity zones available.
               </p>
-              <a href="mailto:andrew@furnace.co.nz?subject=Wholesale Enquiry"
+              <a href="mailto:andrew@furnace.nz?subject=Wholesale Enquiry"
                 className="inline-flex items-center gap-2 rounded-xl border px-5 py-2.5 font-semibold text-sm transition-colors hover:text-white"
                 style={{ borderColor: "#C4882F", color: "#C4882F", fontFamily: "Arial, sans-serif" }}>
                 <Mail className="h-4 w-4" /> Email for wholesale terms
@@ -484,8 +484,8 @@ export default function App() {
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-stone-500">
             <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Etsy</a>
-            <a href="https://www.trademe.co.nz/stores/furnace" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
-            <a href="mailto:andrew@furnace.co.nz" className="hover:text-stone-300 transition-colors">andrew@furnace.co.nz</a>
+            <a href="https://www.trademe.co.nz/a/member/346611" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
+            <a href="mailto:andrew@furnace.nz" className="hover:text-stone-300 transition-colors">andrew@furnace.nz</a>
             <span>All prices NZD incl. GST</span>
           </div>
         </div>
