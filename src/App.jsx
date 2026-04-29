@@ -484,7 +484,7 @@ export default function App() {
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-stone-500">
             <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Etsy</a>
-            <a href="https://www.trademe.co.nz/a/member/346611" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
+            <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
             <a href="mailto:andrew@furnace.nz" className="hover:text-stone-300 transition-colors">andrew@furnace.nz</a>
             <span>All prices NZD incl. GST</span>
           </div>
