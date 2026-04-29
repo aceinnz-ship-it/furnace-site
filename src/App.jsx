@@ -451,7 +451,7 @@ export default function App() {
                   style={{ background: "#C4882F", color: "#000" }}>
                   <ShoppingBag className="h-4 w-4" /> furnacedecor.etsy.com
                 </a>
-                <a href="https://www.trademe.co.nz/a/member/346611" target="_blank" rel="noreferrer"
+                <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border border-stone-700 px-5 py-2.5 font-semibold text-sm text-stone-300 transition-colors hover:text-white">
                   Trade Me Store
                 </a>
