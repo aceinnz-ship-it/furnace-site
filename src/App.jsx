@@ -243,7 +243,7 @@ export default function App() {
               </h1>
 
               <p className="mt-6 text-lg text-stone-400 leading-relaxed max-w-lg" style={{ fontFamily: "Arial, sans-serif" }}>
-                Handcrafted timber wall art inspired by Aotearoa. Designed, cut, and finished in our Helensville workshop.
+                Handcrafted timber art and décor inspired by Aotearoa. Designed, laser-cut, hand-assembled, and finished in our Helensville workshop.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4" style={{ fontFamily: "Arial, sans-serif" }}>
