@@ -438,7 +438,18 @@ export default function App() {
               </div>
             ))}
           </div>
-
+{/* ── RETURNS POLICY ── */}
+          <div className="rounded-xl border border-stone-800 p-6 mb-6" style={{ fontFamily: "Arial, sans-serif" }}>
+            <h3 className="text-base font-bold text-white mb-2">Returns & Refunds</h3>
+            <p className="text-sm text-stone-400 leading-relaxed">
+              All purchases are processed through Etsy or Trade Me, and are covered by their respective buyer protection policies. 
+              If you're not satisfied with your order for any reason, contact us directly at{" "}
+              <a href="mailto:andrew@furnace.nz" className="hover:brightness-110 transition-all" style={{ color: "#C4882F" }}>
+                andrew@furnace.nz
+              </a>{" "}
+              or 021 149 9447 and we'll make it right. Every furnACE piece is made by hand — if something arrives damaged or not as described, we will replace or refund it, no argument.
+            </p>
+          </div>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-stone-800 p-6">
               <h3 className="text-lg font-black text-white mb-2" style={{ fontFamily: "Georgia, serif" }}>Shop Online</h3>
