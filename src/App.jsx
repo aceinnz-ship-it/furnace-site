@@ -270,9 +270,9 @@ export default function App() {
             {/* Hero product grid */}
             <div className="grid grid-cols-2 gap-3">
               {[
-                { slug: "keal", label: "Kea Alpine Landscape", note: "Flagship · $349" },
-                { slug: "curve", label: "The Curve Diptych", note: "New · $299/pair" },
-                { slug: "chess", label: "NZ Bird Chess Set", note: "Collector · $795" },
+                { slug: "keal", label: "Kea Alpine Landscape", note: "Flagship · $199" },
+                { slug: "curve", label: "The Curve Diptych", note: "New · $179/pair" },
+                { slug: "chess", label: "NZ Bird Chess Set", note: "Collector · $695" },
                 { slug: "kidlit", label: "Kids Night Light", note: "New · $95" },
               ].map(({ slug, label, note }) => (
                 <div key={slug} className="relative overflow-hidden rounded-2xl aspect-square">
