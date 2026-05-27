@@ -44,6 +44,7 @@ const PRODUCTS = [
     sub: "Statement Wall Art · 750×490mm",
     desc: "A bold centrepiece designed to anchor a room. Layered timber construction with a floating silhouette and solid walnut frame. Shadow lines shift as light moves through the day.",
     price: 199,
+    etsy: "https://furnacedecor.etsy.com/listing/4495310025",
   },
   {
     slug: "curve", sku: "FA-CURVE", badge: "New",
@@ -52,6 +53,7 @@ const PRODUCTS = [
     desc: "Laser-cut Okoume ply strips assembled into a continuous wave form across two panels. Pine frame, painted black matte. No comparable piece exists online.",
     price: 179,
     priceSuffix: "pair",
+    etsy: "https://furnacedecor.etsy.com/listing/4495444422",
   },
   {
     slug: "chess", sku: "FA-CHESS", badge: "Collector",
@@ -59,6 +61,7 @@ const PRODUCTS = [
     sub: "Collector Piece · 32 hand-cast pieces",
     desc: "Hand-cast resin from original sculpts. White antique + jade green resin. Black walnut board with pāua shell inlay. Koru storage box. King=Falcon, Queen=Kiwi, Pawn=Fantail.",
     price: 690,
+    etsy: "https://furnacedecor.etsy.com/listing/4487352065",
   },
   {
     slug: "kidlit", sku: "FA-KIDLIT", badge: "New",
@@ -66,6 +69,7 @@ const PRODUCTS = [
     sub: "Lighting · Fantail or Tui · USB",
     desc: "Cartoon-cute NZ bird laser-cut in two layers of Okoume plywood. 3000K warm-white LED strip runs the full perimeter creating a golden halo on the wall. USB powered, inline switch.",
     price: 95,
+    etsy: "https://furnacedecor.etsy.com",
   },
   {
     slug: "tf_series", sku: "FA02",
@@ -73,6 +77,7 @@ const PRODUCTS = [
     sub: "Statement Wall Art · A3 Landscape",
     desc: "Sunset ombré background from deep red to charcoal. Float-mounted silhouettes with koru-scroll detail. Black walnut frame. Two colourways: matte black or natural timber.",
     price: 109,
+    etsy: "https://furnacedecor.etsy.com/listing/4456014650",
   },
   {
     slug: "acrled", sku: "FA-ACRLED",
@@ -81,6 +86,7 @@ const PRODUCTS = [
     desc: "10mm cast acrylic, laser-engraved NZ native bird, shape-cut to silhouette. Every fine line glows in warm-white edge-lit LED. Recycled Matai base. USB powered.",
     price: 59,
     priceSuffix: "Kiwi $69",
+    etsy: "https://furnacedecor.etsy.com",
   },
   {
     slug: "clock", sku: "FA03",
@@ -88,6 +94,11 @@ const PRODUCTS = [
     sub: "Functional Art · Silent Sweep Movement",
     desc: "4mm walnut-stained Okoume ply bird on 7mm pine backer. Macrocarpa frame. Silent sweep quartz movement. Choose Fantail, Morepork, or Tui. AA battery not included.",
     price: 89,
+    etsy: [
+      { label: "Fantail", url: "https://furnacedecor.etsy.com/listing/4462685169" },
+      { label: "Morepork", url: "https://furnacedecor.etsy.com/listing/4462688346" },
+      { label: "Tui", url: "https://furnacedecor.etsy.com/listing/4462686246" },
+    ],
   },
   {
     slug: "kingfisher", sku: "FA01",
@@ -95,6 +106,7 @@ const PRODUCTS = [
     sub: "Wall Art · A3 Portrait · Macrocarpa Frame",
     desc: "Multi-layer plywood with oak and NZ hardwood veneer layers. NZ map outline and koru motif woven through the design. Grey-stained plywood backing.",
     price: 99,
+    etsy: "https://furnacedecor.etsy.com/listing/4462670350",
   },
   {
     slug: "fantail_a4", sku: "FA04",
@@ -102,6 +114,7 @@ const PRODUCTS = [
     sub: "Wall Art · A4 · Macrocarpa Frame · 2 Colourways",
     desc: "Layered Fantail with cherry blossom design on stained backer. Macrocarpa frame with hardwax oil finish. Artwork finished with Cabothane clear coat. Available in dark walnut or charcoal.",
     price: 59,
+    etsy: "https://furnacedecor.etsy.com/listing/4456032636",
   },
   {
     slug: "morepork_a4", sku: "FA05",
@@ -109,6 +122,7 @@ const PRODUCTS = [
     sub: "Wall Art · A4 · Macrocarpa Frame · 2 Colourways",
     desc: "NZ's only surviving native owl, layered plywood with floral motif on stained backer. Macrocarpa frame with hardwax oil finish. Cabothane clear coat. Dark walnut or charcoal colourway.",
     price: 59,
+    etsy: "https://furnacedecor.etsy.com/listing/4462693729",
   },
   {
     slug: "key", sku: "FA06",
@@ -116,6 +130,7 @@ const PRODUCTS = [
     sub: "Functional Wall Art · 5 Bronze Hooks",
     desc: "Three-layer painted plywood Fantail with cherry blossom arch. 5 solid bronze hooks. Wall-mount hardware included. Perfect for entry halls and kitchens.",
     price: 55,
+    etsy: "https://furnacedecor.etsy.com/listing/4462703423",
   },
   {
     slug: "key_bee", sku: "FA07",
@@ -123,6 +138,7 @@ const PRODUCTS = [
     sub: "Functional Wall Art · 7 Black Hooks",
     desc: "Three-layer painted plywood Bee and Manuka blossom arch. 7 solid black hooks. Wall-mount hardware included. A garden-inspired entry piece.",
     price: 55,
+    etsy: "https://furnacedecor.etsy.com/listing/4462704422",
   },
   {
     slug: "coasters", sku: "FA16",
@@ -130,6 +146,7 @@ const PRODUCTS = [
     sub: "Giftware · Set of 5 + A-Frame Holder",
     desc: "Five solid Macrocarpa coasters, each laser-engraved with a NZ native bird. Bird names and collection engraved on the back. Four themed collections. Matching A-frame holder.",
     price: 45,
+    etsy: "https://furnacedecor.etsy.com",
   },
   {
     slug: "candles", sku: "FA11b",
@@ -138,6 +155,10 @@ const PRODUCTS = [
     desc: "Solid Macrocarpa candle holder, laser-engraved NZ native bird. Scented glass tealight included. Finished with Cabothane clear coat. Five designs: Fantail · Morepork · Kereru · Tui · Weka.",
     price: 35,
     priceSuffix: "Large",
+    etsy: [
+      { label: "Regular", url: "https://furnacedecor.etsy.com/listing/4463145619" },
+      { label: "Large", url: "https://furnacedecor.etsy.com/listing/4463153462" },
+    ],
   },
   {
     slug: "nesteg", sku: "FA17",
@@ -145,6 +166,7 @@ const PRODUCTS = [
     sub: "Unique Gift · Kiwi Coin Bank",
     desc: "Kiwi-silhouette coin bank. Pine centre, maple-stained Okoume ply faces, clear acrylic window to watch your savings grow. Coin slot on top, removable disk at rear.",
     price: 35,
+    etsy: "https://furnacedecor.etsy.com",
   },
   {
     slug: "lantern", sku: "FA10",
@@ -152,6 +174,7 @@ const PRODUCTS = [
     sub: "Lighting · Japanese Style · Macrocarpa",
     desc: "Macrocarpa frame with two sets of 4 unique NZ bird panel designs. Washi paper diffuser. USB warm-white LED. Set 1: Tui, Fantail, Kiwi, NZ Falcon. Set 2: Morepork, Kererū, Weka, Kingfisher.",
     price: 89,
+    etsy: "https://furnacedecor.etsy.com",
   },
   {
     slug: "pet", sku: "FA09",
@@ -159,6 +182,7 @@ const PRODUCTS = [
     sub: "Pet Homewares · Bowls Included",
     desc: "Solid white oak top, pine base. Routed bowl recesses. Two stainless steel bowls included. Gilly's food-safe Hard Wax Oil. Rubber non-slip feet.",
     price: 125,
+    etsy: "https://furnacedecor.etsy.com/listing/4462708685",
   },
 ];
 
@@ -272,7 +296,7 @@ export default function App() {
               {[
                 { slug: "keal", label: "Kea Alpine Landscape", note: "Flagship · $199" },
                 { slug: "curve", label: "The Curve Diptych", note: "New · $179/pair" },
-                { slug: "chess", label: "NZ Bird Chess Set", note: "Collector · $695" },
+                { slug: "chess", label: "NZ Bird Chess Set", note: "Collector · $690" },
                 { slug: "kidlit", label: "Kids Night Light", note: "New · $95" },
               ].map(({ slug, label, note }) => (
                 <div key={slug} className="relative overflow-hidden rounded-2xl aspect-square">
@@ -341,11 +365,23 @@ export default function App() {
                 <p className="text-sm text-stone-400 leading-relaxed" style={{ fontFamily: "Arial, sans-serif" }}>{p.desc}</p>
                 <div className="mt-4 flex items-center justify-between" style={{ fontFamily: "Arial, sans-serif" }}>
                   <span className="text-xs text-stone-600 font-mono">{p.sku}</span>
-                  <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
-                    className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
-                    style={{ color: "#C4882F" }}>
-                    Buy on Etsy <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
+                  {Array.isArray(p.etsy) ? (
+                    <div className="flex gap-3">
+                      {p.etsy.map(({ label, url }) => (
+                        <a key={label} href={url} target="_blank" rel="noreferrer"
+                          className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
+                          style={{ color: "#C4882F" }}>
+                          {label} <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <a href={p.etsy || "https://furnacedecor.etsy.com"} target="_blank" rel="noreferrer"
+                      className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
+                      style={{ color: "#C4882F" }}>
+                      Buy on Etsy <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
