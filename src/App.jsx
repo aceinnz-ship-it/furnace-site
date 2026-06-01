@@ -17,7 +17,13 @@ import lantern_img    from "./assets/images/lantern.jpg";
 import pet_img        from "./assets/images/rasied_feeder.jpg";
 import logo           from "./assets/images/furnace-logo.png";
 import fantail_a4_img   from "./assets/images/fantail_a4_walnut.jpg";
-import morepork_a4_img  from "./assets/images/morepork_a4_walnut.jpg"
+import morepork_a4_img  from "./assets/images/morepork_a4_walnut.jpg";
+// ── NEW PRODUCT IMAGES (placeholders — add real files, then these imports resolve) ──
+import lantern_tall_img from "./assets/images/lantern_tall.jpg";
+import coaster_single_img from "./assets/images/coaster_single.jpg";
+import coaster_deco_img from "./assets/images/coaster_artdeco.jpg";
+import corr_art_img from "./assets/images/corrugated_art.jpg";
+import corr_photo_img from "./assets/images/corrugated_photo_frame.jpg";
 
 // ── IMAGE PLACEHOLDER ──────────────────────────────────────────
 // Replace these with: <img src={yourImport} alt="..." className="..." />
@@ -27,7 +33,9 @@ const IMGS = {
   kidlit: kidlit_img, tf_series: tf_img, acrled: acrled_img,
   clock: clock_img, kingfisher: kingfisher_img, key: key_img, key_bee: key_bee_img,
   coasters: coasters_img, candles: candles_img, nesteg: nesteg_img,
-  lantern: lantern_img, pet: pet_img, fantail_a4:  fantail_a4_img, morepork_a4: morepork_a4_img
+  lantern: lantern_img, pet: pet_img, fantail_a4:  fantail_a4_img, morepork_a4: morepork_a4_img,
+  lantern_tall: lantern_tall_img, coaster_single: coaster_single_img,
+  coaster_deco: coaster_deco_img, corr_art: corr_art_img, corr_photo: corr_photo_img,
 };
 
 function Img({ slug, alt, className }) {
@@ -45,15 +53,17 @@ const PRODUCTS = [
     desc: "A bold centrepiece designed to anchor a room. Layered timber construction with a floating silhouette and solid walnut frame. Shadow lines shift as light moves through the day.",
     price: 199,
     etsy: "https://furnacedecor.etsy.com/listing/4495310025",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5961307538",
   },
   {
     slug: "curve", sku: "FA-CURVE", badge: "New",
     name: "The Curve - Diptych Pair",
     sub: "Contemporary Wall Art · 2 panels",
     desc: "Laser-cut Okoume ply strips assembled into a continuous wave form across two panels. Pine frame, painted black matte. No comparable piece exists online.",
-    price: 179,
+    price: 189,
     priceSuffix: "pair",
     etsy: "https://furnacedecor.etsy.com/listing/4495444422",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5964005086",
   },
   {
     slug: "chess", sku: "FA-CHESS", badge: "Collector",
@@ -62,14 +72,16 @@ const PRODUCTS = [
     desc: "Hand-cast resin from original sculpts. White antique + jade green resin. Black walnut board with pāua shell inlay. Koru storage box. King=Falcon, Queen=Kiwi, Pawn=Fantail.",
     price: 690,
     etsy: "https://furnacedecor.etsy.com/listing/4487352065",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5961344738",
   },
   {
-    slug: "kidlit", sku: "FA-KIDLIT", badge: "New",
-    name: "Kids Night Light",
-    sub: "Lighting · Fantail or Tui · USB",
-    desc: "Cartoon-cute NZ bird laser-cut in two layers of Okoume plywood. 3000K warm-white LED strip runs the full perimeter creating a golden halo on the wall. USB powered, inline switch.",
-    price: 95,
+    slug: "kidlit", sku: "FA-NIGHTLIGHT", badge: "New",
+    name: "NZ Bird Backlit Night Light",
+    sub: "Nursery Wall Light · Tui or Fantail · USB",
+    desc: "Soft warm backlit NZ bird for the nursery or kids' room. Two layers of Okoume plywood glow two ways: a halo around the bird plus lit detail through the front. USB powered, inline switch.",
+    price: 99,
     etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/baby-gear/baby-room-furniture/lamps-lighting/listing/5964244095",
   },
   {
     slug: "tf_series", sku: "FA02",
@@ -78,6 +90,7 @@ const PRODUCTS = [
     desc: "Sunset ombré background from deep red to charcoal. Float-mounted silhouettes with koru-scroll detail. Black walnut frame. Two colourways: matte black or natural timber.",
     price: 109,
     etsy: "https://furnacedecor.etsy.com/listing/4456014650",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5959534876",
   },
   {
     slug: "acrled", sku: "FA-ACRLED",
@@ -87,6 +100,7 @@ const PRODUCTS = [
     price: 59,
     priceSuffix: "Kiwi $69",
     etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5963025951",
   },
   {
     slug: "clock", sku: "FA03",
@@ -99,6 +113,7 @@ const PRODUCTS = [
       { label: "Morepork", url: "https://furnacedecor.etsy.com/listing/4462688346" },
       { label: "Tui", url: "https://furnacedecor.etsy.com/listing/4462686246" },
     ],
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/clocks/wall-clocks/listing/5956162639",
   },
   {
     slug: "kingfisher", sku: "FA01",
@@ -107,57 +122,103 @@ const PRODUCTS = [
     desc: "Multi-layer plywood with oak and NZ hardwood veneer layers. NZ map outline and koru motif woven through the design. Grey-stained plywood backing.",
     price: 99,
     etsy: "https://furnacedecor.etsy.com/listing/4462670350",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5959535131",
   },
   {
     slug: "fantail_a4", sku: "FA04",
     name: "Fantail (Pīwakawaka) Wall Art",
     sub: "Wall Art · A4 · Macrocarpa Frame · 2 Colourways",
     desc: "Layered Fantail with cherry blossom design on stained backer. Macrocarpa frame with hardwax oil finish. Artwork finished with Cabothane clear coat. Available in dark walnut or charcoal.",
-    price: 59,
+    price: 69,
     etsy: "https://furnacedecor.etsy.com/listing/4456032636",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5959534766",
   },
   {
     slug: "morepork_a4", sku: "FA05",
     name: "Morepork (Ruru) Wall Art",
     sub: "Wall Art · A4 · Macrocarpa Frame · 2 Colourways",
     desc: "NZ's only surviving native owl, layered plywood with floral motif on stained backer. Macrocarpa frame with hardwax oil finish. Cabothane clear coat. Dark walnut or charcoal colourway.",
-    price: 59,
+    price: 69,
     etsy: "https://furnacedecor.etsy.com/listing/4462693729",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5961307558",
   },
   {
     slug: "key", sku: "FA06",
     name: "Fantail Key Holder",
-    sub: "Functional Wall Art · 5 Bronze Hooks",
-    desc: "Three-layer painted plywood Fantail with cherry blossom arch. 5 solid bronze hooks. Wall-mount hardware included. Perfect for entry halls and kitchens.",
-    price: 55,
+    sub: "Functional Wall Art · 6 Hooks",
+    desc: "Three-layer painted plywood Fantail with cherry blossom arch. 6 solid bronze hooks. Wall-mount hardware included. Perfect for entry halls and kitchens.",
+    price: 59,
     etsy: "https://furnacedecor.etsy.com/listing/4462703423",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5959534628",
   },
   {
     slug: "key_bee", sku: "FA07",
     name: "Bee & Manuka Key Holder",
-    sub: "Functional Wall Art · 7 Black Hooks",
-    desc: "Three-layer painted plywood Bee and Manuka blossom arch. 7 solid black hooks. Wall-mount hardware included. A garden-inspired entry piece.",
-    price: 55,
+    sub: "Functional Wall Art · 6 Hooks",
+    desc: "Three-layer painted plywood Bee and Manuka blossom arch. 6 solid hooks. Wall-mount hardware included. A garden-inspired entry piece.",
+    price: 59,
     etsy: "https://furnacedecor.etsy.com/listing/4462704422",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5959545119",
+  },
+  {
+    slug: "corr_art", sku: "FA-CORR-ART",
+    name: "Corrugated Iron Wall Art",
+    sub: "Wall Art · Pine Frame · Kiwiana",
+    desc: "Corrugated iron backer with a laser-cut basswood NZ scene overlay, set in a pine box frame. Rustic and refined at once. Designs: Pukeko family, Kiwi pair, or NZ silhouettes.",
+    price: 60,
+    etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5962986153",
+  },
+  {
+    slug: "corr_photo", sku: "FA-CORR-PHT",
+    name: "Corrugated Iron Photo Frame",
+    sub: "Wall Art · Assorted Themes · 4×6 Photo",
+    desc: "Pine frame, corrugated iron backer, laser-cut NZ scene with a 4×6\" portrait photo opening. The NZ scene frames your memory. Themes: Coastal, Alpine, or Kiwiana.",
+    price: 65,
+    etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/wall-hangings/listing/5962816527",
   },
   {
     slug: "coasters", sku: "FA16",
     name: "Birds of Aotearoa Coasters",
-    sub: "Giftware · Set of 5 + A-Frame Holder",
-    desc: "Five solid Macrocarpa coasters, each laser-engraved with a NZ native bird. Bird names and collection engraved on the back. Four themed collections. Matching A-frame holder.",
-    price: 45,
+    sub: "Giftware · Set of 5 + Holder · 20 NZ Birds",
+    desc: "Five solid Macrocarpa coasters, engraved both sides with NZ native birds. 20 birds in total across five themed collections. Matching X-frame holder included.",
+    price: 59,
     etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/candles-holders/other-candle-holders/listing/5963125991",
+  },
+  {
+    slug: "coaster_deco", sku: "FA15a",
+    name: "Art Deco Coaster Set",
+    sub: "Giftware · Set of 6 + A-Frame Holder",
+    desc: "Six solid Macrocarpa coasters with Art Deco geometric laser engraving, three distinct motifs with two of each. Matching Macrocarpa A-frame holder. Gilly's Hard Wax Oil finish.",
+    price: 49,
+    etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/kitchen/tableware-linen/placemats-coasters/listing/5964291140",
+  },
+  {
+    slug: "coaster_single", sku: "FA15b",
+    name: "Single NZ Coaster",
+    sub: "Giftware · Native Bird, Fern, Forest, Wreath or Art Deco",
+    desc: "One solid Macrocarpa coaster, laser-engraved with a genuine NZ design, mix and match. furnACE logo on the reverse. Buy any 5 singles and the matching A-frame holder is included free.",
+    price: 12,
+    etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/kitchen/tableware-linen/placemats-coasters/listing/5964311030",
   },
   {
     slug: "candles", sku: "FA11b",
     name: "NZ Bird Candle Holders",
     sub: "Gifting · Macrocarpa · Tealight Included",
     desc: "Solid Macrocarpa candle holder, laser-engraved NZ native bird. Scented glass tealight included. Finished with Cabothane clear coat. Five designs: Fantail · Morepork · Kereru · Tui · Weka.",
-    price: 35,
-    priceSuffix: "Large",
+    price: 39,
+    priceSuffix: "Large $59",
     etsy: [
       { label: "Regular", url: "https://furnacedecor.etsy.com/listing/4463145619" },
       { label: "Large", url: "https://furnacedecor.etsy.com/listing/4463153462" },
+    ],
+    trademe: [
+      { label: "Regular", url: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/candles-holders/other-candle-holders/listing/5956162783" },
+      { label: "Large", url: "https://www.trademe.co.nz/a/marketplace/home-living/home-decor/candles-holders/scented-candles/listing/5959535021" },
     ],
   },
   {
@@ -165,16 +226,26 @@ const PRODUCTS = [
     name: "The Nest Egg",
     sub: "Unique Gift · Kiwi Coin Bank",
     desc: "Kiwi-silhouette coin bank. Pine centre, maple-stained Okoume ply faces, clear acrylic window to watch your savings grow. Coin slot on top, removable disk at rear.",
-    price: 35,
+    price: 45,
     etsy: "https://furnacedecor.etsy.com",
   },
   {
-    slug: "lantern", sku: "FA10",
-    name: "NZ Bird Lantern",
-    sub: "Lighting · Japanese Style · Macrocarpa",
-    desc: "Macrocarpa frame with two sets of 4 unique NZ bird panel designs. Washi paper diffuser. USB warm-white LED. Set 1: Tui, Fantail, Kiwi, NZ Falcon. Set 2: Morepork, Kererū, Weka, Kingfisher.",
-    price: 89,
+    slug: "lantern", sku: "FA-SHOJI-SN",
+    name: "Compact Shoji Lantern",
+    sub: "Lighting · NZ Bird Panels · Moon & Matariki Projector",
+    desc: "Macrocarpa frame with two sets of 4 unique NZ bird panel designs and a Moon & Matariki stars projector lid. Washi paper diffuser. USB warm-white LED. Set 1: Tui, Fantail, Kiwi, NZ Falcon. Set 2: Morepork, Kererū, Weka, Kingfisher.",
+    price: 95,
     etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/lamps/table-lamps/listing/5962754265",
+  },
+  {
+    slug: "lantern_tall", sku: "FA-SHOJI-TN",
+    name: "Tall NZ Shoji Lantern",
+    sub: "Lighting · Open-Top Uplight · NZ Bird Panels · USB",
+    desc: "Tall open-top shoji lantern that casts an uplight glow, with laser-cut NZ bird panels and washi paper diffuser. Macrocarpa frame, USB warm-white LED.",
+    price: 109,
+    etsy: "https://furnacedecor.etsy.com",
+    trademe: "https://www.trademe.co.nz/a/marketplace/home-living/lamps/night-lights/listing/5964051155",
   },
   {
     slug: "pet", sku: "FA09",
@@ -183,13 +254,14 @@ const PRODUCTS = [
     desc: "Solid white oak top, pine base. Routed bowl recesses. Two stainless steel bowls included. Gilly's food-safe Hard Wax Oil. Rubber non-slip feet.",
     price: 125,
     etsy: "https://furnacedecor.etsy.com/listing/4462708685",
+    trademe: "https://www.trademe.co.nz/a/marketplace/pets-animals/dogs/bowls-feeders/listing/5956162915",
   },
 ];
 
 const CATS = [
-  { icon: Bird,      label: "Wall Art",       filter: (p) => ["FA-KEAL","FA-CURVE","FA02","FA01","FA06","FA07","FA04","FA05","FA03"].includes(p.sku) },
-  { icon: Lightbulb, label: "Lighting",       filter: (p) => ["FA-KIDLIT","FA-ACRLED","FA10"].includes(p.sku) },
-  { icon: Trees,     label: "Gifting",        filter: (p) => ["FA16","FA11b","FA17","FA09"].includes(p.sku) },
+  { icon: Bird,      label: "Wall Art",       filter: (p) => ["FA-KEAL","FA-CURVE","FA02","FA01","FA06","FA07","FA04","FA05","FA03","FA-CORR-ART","FA-CORR-PHT"].includes(p.sku) },
+  { icon: Lightbulb, label: "Lighting",       filter: (p) => ["FA-NIGHTLIGHT","FA-ACRLED","FA-SHOJI-SN","FA-SHOJI-TN"].includes(p.sku) },
+  { icon: Trees,     label: "Gifting",        filter: (p) => ["FA16","FA15a","FA15b","FA11b","FA17","FA09"].includes(p.sku) },
   { icon: Award,     label: "Collector",      filter: (p) => p.badge === "Collector" },
   { icon: Clock, label: "Clocks", filter: (p) => p.sku === "FA03" },
   { icon: Hammer,    label: "All Products",   filter: () => true },
@@ -221,10 +293,10 @@ export default function App() {
             {["Products","About","Contact"].map(s => (
               <a key={s} href={`#${s.toLowerCase()}`} className="hover:text-white transition-colors">{s}</a>
             ))}
-            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
+            <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
               className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
               style={{ background: "#C4882F", color: "#000", fontFamily: "Arial, sans-serif" }}>
-              <ShoppingBag className="h-3.5 w-3.5" /> Shop Etsy
+              <ShoppingBag className="h-3.5 w-3.5" /> Shop Trade Me
             </a>
           </div>
           <button className="md:hidden text-stone-400" onClick={() => setMenuOpen(!menuOpen)}>
@@ -237,10 +309,10 @@ export default function App() {
               <a key={s} href={`#${s.toLowerCase()}`} onClick={() => setMenuOpen(false)}
                 className="block py-3 text-stone-300 border-b border-stone-800 hover:text-white transition-colors">{s}</a>
             ))}
-            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
+            <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
               className="mt-4 flex items-center justify-center gap-2 rounded-xl py-3 font-semibold"
               style={{ background: "#C4882F", color: "#000" }}>
-              <ShoppingBag className="h-4 w-4" /> Shop on Etsy
+              <ShoppingBag className="h-4 w-4" /> Shop on Trade Me
             </a>
           </div>
         )}
@@ -275,10 +347,10 @@ export default function App() {
                   style={{ background: "#C4882F", color: "#000" }}>
                   Browse the collection
                 </a>
-                <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
+                <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border px-6 py-3 text-stone-300 hover:text-white transition-colors"
                   style={{ borderColor: "#555" }}>
-                  Shop on Etsy <ExternalLink className="h-4 w-4" />
+                  Shop on Trade Me <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
 
@@ -295,9 +367,9 @@ export default function App() {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { slug: "keal", label: "Kea Alpine Landscape", note: "Flagship · $199" },
-                { slug: "curve", label: "The Curve Diptych", note: "New · $179/pair" },
+                { slug: "curve", label: "The Curve Diptych", note: "New · $189/pair" },
                 { slug: "chess", label: "NZ Bird Chess Set", note: "Collector · $690" },
-                { slug: "kidlit", label: "Kids Night Light", note: "New · $95" },
+                { slug: "kidlit", label: "Bird Night Light", note: "New · $99" },
               ].map(({ slug, label, note }) => (
                 <div key={slug} className="relative overflow-hidden rounded-2xl aspect-square">
                   <Img slug={slug} alt={label} className="w-full h-full object-cover" />
@@ -363,25 +435,43 @@ export default function App() {
                   </div>
                 </div>
                 <p className="text-sm text-stone-400 leading-relaxed" style={{ fontFamily: "Arial, sans-serif" }}>{p.desc}</p>
-                <div className="mt-4 flex items-center justify-between" style={{ fontFamily: "Arial, sans-serif" }}>
+
+                <div className="mt-4 flex items-center justify-between gap-3" style={{ fontFamily: "Arial, sans-serif" }}>
                   <span className="text-xs text-stone-600 font-mono">{p.sku}</span>
-                  {Array.isArray(p.etsy) ? (
-                    <div className="flex gap-3">
-                      {p.etsy.map(({ label, url }) => (
+                  <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1">
+                    {/* Trade Me — primary NZ checkout path */}
+                    {Array.isArray(p.trademe) ? (
+                      p.trademe.map(({ label, url }) => (
                         <a key={label} href={url} target="_blank" rel="noreferrer"
                           className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
                           style={{ color: "#C4882F" }}>
-                          {label} <ExternalLink className="h-3.5 w-3.5" />
+                          {label} (Trade Me) <ExternalLink className="h-3.5 w-3.5" />
                         </a>
-                      ))}
-                    </div>
-                  ) : (
-                    <a href={p.etsy || "https://furnacedecor.etsy.com"} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
-                      style={{ color: "#C4882F" }}>
-                      Buy on Etsy <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                  )}
+                      ))
+                    ) : p.trademe ? (
+                      <a href={p.trademe} target="_blank" rel="noreferrer"
+                        className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
+                        style={{ color: "#C4882F" }}>
+                        Buy on Trade Me <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    ) : null}
+                    {/* Etsy — single link or multi-variant links */}
+                    {Array.isArray(p.etsy) ? (
+                      p.etsy.map(({ label, url }) => (
+                        <a key={label} href={url} target="_blank" rel="noreferrer"
+                          className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-white"
+                          style={{ color: "#999" }}>
+                          {label} (Etsy) <ExternalLink className="h-3 w-3" />
+                        </a>
+                      ))
+                    ) : (
+                      <a href={p.etsy || "https://furnacedecor.etsy.com"} target="_blank" rel="noreferrer"
+                        className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-white"
+                        style={{ color: "#999" }}>
+                        Etsy <ExternalLink className="h-3 w-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -437,7 +527,7 @@ export default function App() {
             {[
               { n: "23+", l: "Product SKUs" },
               { n: "100%", l: "Made in NZ" },
-              { n: "8+", l: "Years combined craft experience" },,
+              { n: "8+", l: "Years combined craft experience" },
               { n: "0", l: "AI-generated images" },
             ].map(s => (
               <div key={s.l} className="rounded-xl border border-stone-800 p-5">
@@ -478,7 +568,7 @@ export default function App() {
           <div className="rounded-xl border border-stone-800 p-6 mb-6" style={{ fontFamily: "Arial, sans-serif" }}>
             <h3 className="text-base font-bold text-white mb-2">Returns & Refunds</h3>
             <p className="text-sm text-stone-400 leading-relaxed">
-              All purchases are processed through Etsy or Trade Me, and are covered by their respective buyer protection policies. 
+              All purchases are processed through Trade Me or Etsy, and are covered by their respective buyer protection policies. 
               If you're not satisfied with your order for any reason, contact us directly at{" "}
               <a href="mailto:andrew@furnace.nz" className="hover:brightness-110 transition-all" style={{ color: "#C4882F" }}>
                 andrew@furnace.nz
@@ -490,17 +580,17 @@ export default function App() {
             <div className="rounded-2xl border border-stone-800 p-6">
               <h3 className="text-lg font-black text-white mb-2" style={{ fontFamily: "Georgia, serif" }}>Shop Online</h3>
               <p className="text-sm text-stone-400 mb-4 leading-relaxed" style={{ fontFamily: "Arial, sans-serif" }}>
-                Shop the full furnACE range online. Free tracked delivery within New Zealand. International shipping available on selected products, contact us for details.
+                Shop the full furnACE range online. Trade Me is the easiest checkout for NZ buyers, with free tracked delivery nationwide. International shipping available via Etsy on selected products.
               </p>
               <div className="flex flex-wrap gap-3" style={{ fontFamily: "Arial, sans-serif" }}>
-                <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
+                <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl px-5 py-2.5 font-semibold text-sm transition-all hover:brightness-110"
                   style={{ background: "#C4882F", color: "#000" }}>
-                  <ShoppingBag className="h-4 w-4" /> furnacedecor.etsy.com
+                  <ShoppingBag className="h-4 w-4" /> Trade Me Store
                 </a>
-                <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
+                <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 rounded-xl border border-stone-700 px-5 py-2.5 font-semibold text-sm text-stone-300 transition-colors hover:text-white">
-                  Trade Me Store
+                  furnacedecor.etsy.com
                 </a>
               </div>
             </div>
@@ -527,11 +617,11 @@ export default function App() {
             <span className="text-xl font-black" style={{ fontFamily: "Georgia, serif" }}>
               furn<span style={{ color: "#C4882F" }}>ACE</span>
             </span>
-            <span className="ml-3 text-xs text-stone-600">Helensville, Auckland · Handmade in New Zealand · April 2026</span>
+            <span className="ml-3 text-xs text-stone-600">Helensville, Auckland · Handmade in New Zealand · June 2026</span>
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-stone-500">
-            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Etsy</a>
             <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
+            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Etsy</a>
             <a href="mailto:andrew@furnace.nz" className="hover:text-stone-300 transition-colors">andrew@furnace.nz</a>
             <span>All prices NZD incl. GST</span>
           </div>
