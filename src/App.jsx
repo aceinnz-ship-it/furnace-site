@@ -38,6 +38,21 @@ const IMGS = {
   coaster_deco: coaster_deco_img, corr_art: corr_art_img, corr_photo: corr_photo_img,
 };
 
+// ── ANALYTICS: outbound-click tracking ─────────────────────────
+// Fires a GA4 event whenever someone clicks a "Buy on Trade Me" or Etsy
+// link, tagged with the channel, product name and SKU. Lets you see in
+// GA4 exactly which products drive clicks to which marketplace.
+// (Meta Pixel can be added here later with the same pattern: window.fbq?.(...))
+function trackOutbound(channel, productName, sku) {
+  try {
+    window.gtag?.("event", "outbound_click", {
+      channel,                 // "Trade Me" or "Etsy"
+      product_name: productName,
+      sku: sku || "",
+    });
+  } catch (e) { /* never block the click */ }
+}
+
 function Img({ slug, alt, className }) {
   const src = IMGS[slug];
   if (!src) return <div className={`bg-stone-800 ${className}`} />;
@@ -294,6 +309,7 @@ export default function App() {
               <a key={s} href={`#${s.toLowerCase()}`} className="hover:text-white transition-colors">{s}</a>
             ))}
             <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
+              onClick={() => trackOutbound("Trade Me", "Store (nav)", "STORE")}
               className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
               style={{ background: "#C4882F", color: "#000", fontFamily: "Arial, sans-serif" }}>
               <ShoppingBag className="h-3.5 w-3.5" /> Shop Trade Me
@@ -310,6 +326,7 @@ export default function App() {
                 className="block py-3 text-stone-300 border-b border-stone-800 hover:text-white transition-colors">{s}</a>
             ))}
             <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
+              onClick={() => trackOutbound("Trade Me", "Store (mobile nav)", "STORE")}
               className="mt-4 flex items-center justify-center gap-2 rounded-xl py-3 font-semibold"
               style={{ background: "#C4882F", color: "#000" }}>
               <ShoppingBag className="h-4 w-4" /> Shop on Trade Me
@@ -348,6 +365,7 @@ export default function App() {
                   Browse the collection
                 </a>
                 <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
+                  onClick={() => trackOutbound("Trade Me", "Store (hero)", "STORE")}
                   className="flex items-center gap-2 rounded-xl border px-6 py-3 text-stone-300 hover:text-white transition-colors"
                   style={{ borderColor: "#555" }}>
                   Shop on Trade Me <ExternalLink className="h-4 w-4" />
@@ -443,6 +461,7 @@ export default function App() {
                     {Array.isArray(p.trademe) ? (
                       p.trademe.map(({ label, url }) => (
                         <a key={label} href={url} target="_blank" rel="noreferrer"
+                          onClick={() => trackOutbound("Trade Me", `${p.name} (${label})`, p.sku)}
                           className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
                           style={{ color: "#C4882F" }}>
                           {label} (Trade Me) <ExternalLink className="h-3.5 w-3.5" />
@@ -450,6 +469,7 @@ export default function App() {
                       ))
                     ) : p.trademe ? (
                       <a href={p.trademe} target="_blank" rel="noreferrer"
+                        onClick={() => trackOutbound("Trade Me", p.name, p.sku)}
                         className="flex items-center gap-1 text-sm font-semibold transition-colors hover:brightness-110"
                         style={{ color: "#C4882F" }}>
                         Buy on Trade Me <ExternalLink className="h-3.5 w-3.5" />
@@ -459,6 +479,7 @@ export default function App() {
                     {Array.isArray(p.etsy) ? (
                       p.etsy.map(({ label, url }) => (
                         <a key={label} href={url} target="_blank" rel="noreferrer"
+                          onClick={() => trackOutbound("Etsy", `${p.name} (${label})`, p.sku)}
                           className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-white"
                           style={{ color: "#999" }}>
                           {label} (Etsy) <ExternalLink className="h-3 w-3" />
@@ -466,6 +487,7 @@ export default function App() {
                       ))
                     ) : (
                       <a href={p.etsy || "https://furnacedecor.etsy.com"} target="_blank" rel="noreferrer"
+                        onClick={() => trackOutbound("Etsy", p.name, p.sku)}
                         className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-white"
                         style={{ color: "#999" }}>
                         Etsy <ExternalLink className="h-3 w-3" />
@@ -584,11 +606,13 @@ export default function App() {
               </p>
               <div className="flex flex-wrap gap-3" style={{ fontFamily: "Arial, sans-serif" }}>
                 <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer"
+                  onClick={() => trackOutbound("Trade Me", "Store (footer CTA)", "STORE")}
                   className="flex items-center gap-2 rounded-xl px-5 py-2.5 font-semibold text-sm transition-all hover:brightness-110"
                   style={{ background: "#C4882F", color: "#000" }}>
                   <ShoppingBag className="h-4 w-4" /> Trade Me Store
                 </a>
                 <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer"
+                  onClick={() => trackOutbound("Etsy", "Store (footer CTA)", "STORE")}
                   className="flex items-center gap-2 rounded-xl border border-stone-700 px-5 py-2.5 font-semibold text-sm text-stone-300 transition-colors hover:text-white">
                   furnacedecor.etsy.com
                 </a>
@@ -620,8 +644,8 @@ export default function App() {
             <span className="ml-3 text-xs text-stone-600">Helensville, Auckland · Handmade in New Zealand · June 2026</span>
           </div>
           <div className="flex flex-wrap gap-6 text-sm text-stone-500">
-            <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Trade Me</a>
-            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" className="hover:text-stone-300 transition-colors">Etsy</a>
+            <a href="https://www.trademe.co.nz/a/search?member_listing=346611" target="_blank" rel="noreferrer" onClick={() => trackOutbound("Trade Me", "Store (footer bar)", "STORE")} className="hover:text-stone-300 transition-colors">Trade Me</a>
+            <a href="https://furnacedecor.etsy.com" target="_blank" rel="noreferrer" onClick={() => trackOutbound("Etsy", "Store (footer bar)", "STORE")} className="hover:text-stone-300 transition-colors">Etsy</a>
             <a href="mailto:andrew@furnace.nz" className="hover:text-stone-300 transition-colors">andrew@furnace.nz</a>
             <span>All prices NZD incl. GST</span>
           </div>
